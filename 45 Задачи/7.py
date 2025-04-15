@@ -18,7 +18,7 @@
 #  В нашем случае, на нашем сайте все элементы выпадающего списка могут быть спокойно найдены по тегу.
 #  Метод By.TAG_NAME нам в этом поможет.
 #
-import time
+
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
