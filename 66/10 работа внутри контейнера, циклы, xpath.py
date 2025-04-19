@@ -45,6 +45,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 # url = 'https://parsinger.ru/selenium/5.5/5/test/test.html'
 url = 'https://parsinger.ru/selenium/5.5/5/1.html'
+
+
 with webdriver.Chrome() as browser:
     browser.get(url)
     divs_global = browser.find_element(By.ID, 'main-container')
