@@ -11,5 +11,15 @@
 # 💡 Совет: обязательно добавьте time.sleep() после прокрутки, так как пароль появляется не сразу.
 #
 # 🟢На сайте установлена защита от ручного скролинга, пароль появиться только при использовании Selenium.
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+url = 'https://parsinger.ru/selenium/7/7.1/index.html'
 
 
+with webdriver.Chrome() as browser:
+    browser.get(url)
+    browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(5)
+    print(browser.find_element(By.ID, 'secret-container').text)

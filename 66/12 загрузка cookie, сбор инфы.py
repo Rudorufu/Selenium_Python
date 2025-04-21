@@ -166,4 +166,4 @@ with webdriver.Chrome() as browser:
         if k[1][0] == min_age:
             if int(k[1][1]) > young_max_skills[1]:
                 young_max_skills = [k[0], (k[1][1])]
-    print(young_max_skills)
+    print(young_max_skills[0])
