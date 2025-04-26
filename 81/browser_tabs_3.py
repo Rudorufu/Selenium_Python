@@ -13,7 +13,6 @@
 import time
 
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 url = "https://parsinger.ru/selenium/8/8.1/site1/"
 
 
