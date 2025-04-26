@@ -23,16 +23,32 @@ from selenium.webdriver.common.by import By
 
 url = 'https://parsinger.ru/selenium/7/7.4.1/index.html'
 
-with webdriver.Chrome() as browser:
-    browser.get(url)
-    ActionChains(browser).scroll_by_amount(1, 500).perform()
-    time.sleep(5)
-    secret = browser.find_element(By.CLASS_NAME, 'countdown').text
-    secret = secret.split()[1]
-    time.sleep(1)
-    div = browser.find_element(By.CLASS_NAME, 'step-container')
-    ActionChains(browser).move_to_element(div).scroll_by_amount(1, 1500).perform()
-    time.sleep(2)
-    browser.find_element(By.TAG_NAME, 'input').send_keys(secret)
-    browser.find_element(By.TAG_NAME, 'button').click()
-    print(browser.find_element(By.ID, 'final-key').text)
+# with webdriver.Chrome() as browser:
+#     browser.get(url)
+#     ActionChains(browser).scroll_by_amount(1, 500).perform()
+#     time.sleep(5)
+#     secret = browser.find_element(By.CLASS_NAME, 'countdown').text
+#     secret = secret.split()[1]
+#     time.sleep(1)
+#     div = browser.find_element(By.CLASS_NAME, 'step-container')
+#     ActionChains(browser).move_to_element(div).scroll_by_amount(1, 1500).perform()
+#     time.sleep(2)
+#     browser.find_element(By.TAG_NAME, 'input').send_keys(secret)
+#     browser.find_element(By.TAG_NAME, 'button').click()
+#     print(browser.find_element(By.ID, 'final-key').text)
+
+
+browser = webdriver.Chrome()
+browser.get(url)
+ActionChains(browser).scroll_by_amount(1, 500).perform()
+time.sleep(5)
+secret = browser.find_element(By.CLASS_NAME, 'countdown').text
+secret = secret.split()[1]
+time.sleep(1)
+div = browser.find_element(By.CLASS_NAME, 'step-container')
+ActionChains(browser).move_to_element(div).scroll_by_amount(1, 1500).perform()
+time.sleep(2)
+browser.find_element(By.TAG_NAME, 'input').send_keys(secret)
+browser.find_element(By.TAG_NAME, 'button').click()
+print(browser.find_element(By.ID, 'final-key').text)
+# time.sleep(5)
